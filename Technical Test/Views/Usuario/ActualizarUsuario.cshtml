@@ -1,0 +1,72 @@
+﻿@model Technical_Test.Entities.UsuarioObj
+
+@{
+    ViewBag.Title = "";
+}
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Usuario</h6>
+    </div>
+    <div class="card-body">
+
+        @using (Html.BeginForm("ActualizarUsuario", "Usuario", new { pos = Model.pos }, FormMethod.Post))
+        {
+            <div class="row">
+
+                <!--para las filas-->
+                <!--se crea la columna-->
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Usuario:</label>
+                        @Html.TextBoxFor(m => m.nombre, new { disabled = "disabled", @readonly = "readonly", @class = "form-control", @type = "text" })
+                        @Html.ValidationMessageFor(Model => Model.nombre, null, new { @class = "text-danger" })
+                    </div>
+
+                    <br />
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Cedula:</label>
+                        @Html.TextBoxFor(m => m.cedula, new { disabled = "disabled", @readonly = "readonly", @class = "form-control", @type = "text" })
+                        @Html.ValidationMessageFor(Model => Model.cedula, null, new { @class = "text-danger" })
+                    </div>
+                    <br />
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Direccion:</label>
+                        @Html.TextBoxFor(m => m.direccion, new { @class = "form-control", @type = "text" })
+                        @Html.ValidationMessageFor(Model => Model.direccion, null, new { @class = "text-danger" })
+                    </div>
+                    <br />
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        @Html.TextBoxFor(m => m.telefono, new { @class = "form-control", @type = "text" })
+                        @Html.ValidationMessageFor(Model => Model.telefono, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,64 @@
+﻿@model Technical_Test.Entities.UsuarioObj
+
+@{
+    ViewBag.Title = "";
+}
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+
+    <div class="card-header py-3 bg-primary">
+        <h6 class="m-0 font-weight-bold text-white">Usuario</h6>
+    </div>
+    <div class="card-body">
+
+       
+            <div class="row" id="target">
+
+                <!--para las filas-->
+                <!--se crea la columna-->
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Usuario:</label>
+                        @Html.DropDownListFor(m => m.pos, ViewBag.listaUsuarios as List<SelectListItem>, new { @onchange = "MostarDatos()", @class = "form-control" })
+                    </div>
+
+                    <br />
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Cedula:</label>
+                        @Html.TextBoxFor(m => m.cedula, new { disabled = "disabled", @readonly = "readonly", @class = "form-control", @type = "text" })
+
+                    </div>
+                    <br />
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Direccion:</label>
+                        @Html.TextBoxFor(m => m.direccion, new { disabled = "disabled", @readonly = "readonly", @class = "form-control", @type = "text" })
+                    </div>
+                    <br />
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        @Html.TextBoxFor(m => m.telefono, new { disabled = "disabled", @readonly = "readonly", @class = "form-control", @type = "text" })
+                    </div>
+                </div>
+
+
+            </div>
+        
+
+           
+        
+    </div>
+</div>
+
+
+
+
